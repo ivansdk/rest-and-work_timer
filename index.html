@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work/Rest Timer</title>
+    <link rel="shortcut icon" type="image/png" href="icons/favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="overlay">
+           <div class="modal">
+            <div class="modal-close">
+                <img src="icons/close.svg" alt="close">
+            </div>
+            <div class="tabs-block">
+                <button data-id="general" class="tab active-tab">others</button>
+                <button data-id="timers" class="tab">timers</button>
+                <button data-id="sounds" class="tab">sounds</button>
+            </div>
+            <div class="modal-content">
+                    <div data-id="general" class="tab-content tab-content_active">
+                        <label for="theme" class="select-title">Choose a theme for the background:</label>
+                        <select class="select" id="theme">
+                            <option value="img/black-hole.jpg">black hole</option>
+                            <option value="img/grassy-landscape.jpg">grassy landscape</option>
+                            <option value="img/japan.jpg">japan</option>
+                            <option value="img/just-black.jpg">just black</option>
+                            <option value="img/mountains.jpg">mountains</option>
+                            <option value="img/space.jpg">space</option>
+                            <option value="img/steampunk.jpg">steampunk</option>
+                            <option value="img/sunset-forest.jpg">sunset forest</option>
+                            <option value="img/warrior.jpg">warrior</option>
+                            <option value="img/wonderful-landscape.jpg">wonderful landscape</option>
+                        </select>
+                    </div>
+                    <div data-id="timers" class="tab-content">
+                        <div class="timers">
+                            <div>
+                                <label for="work">Work</label>
+                                <input placeholder="minutes" value="60" maxlength="4" id="work" type="text" class="time-input" >
+                            </div>
+                            <div>
+                                <label for="rest">Rest</label>
+                                <input placeholder="minutes" value="15" maxlength="4" id="rest" type="text" class="time-input">
+                            </div>
+                            <div class="switch-timer checkbox checked">
+                                <input checked id="next" type="checkbox">
+                                <span class="checkbox-title">Automatically start next timer</span>
+                                <span class="checkbox-subtitle">When the time is up, the next timer will start</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="sounds" class="tab-content">
+                        <label for="sound" class="select-title">Select a sound:</label>
+                        <select class="select" id="soundType">
+                            <option value="audio/acoustic-guitar.mp3">acoustic guitar</option>>
+                            <option value="audio/beautiful-piano.mp3">beautiful piano</option>
+                            <option value="audio/bell.mp3">bell</option>
+                            <option value="audio/flute.mp3">flute</option>
+                            <option value="audio/simpsons-sax.mp3">simpsons sax</option>
+                        </select>
+                        <div class="volume">
+                            <label for="range">Volume</label>
+                            <input class="volume" min="0" max="100" value="60" id="volume" type="range">
+                        </div>
+                        <div class="checkbox sound-play checked">
+                            <input checked id="sound-play" type="checkbox">
+                            <span class="checkbox-title">Play sound when time is up</span><br>
+                        </div>
+                    </div>
+                    <button class="btn save-btn">Save</button>
+            </div>
+           </div>
+        </div>
+        <div class="container">
+            <main class="timer">
+                <h1 class="title">work/rest timer</h1>
+                <div class="status-container">
+                    <div class="btn status-btn work active-status">Work</div>
+                    <div class="btn status-btn rest">Rest</div>
+                </div>
+                <div class="time">00:00</div>
+                <div class="btn-container">
+                    <button id="chg-btn" class="btn start-btn">start</button>
+                    <button class="btn reset-btn">reset</button>
+                </div>
+                <button class="btn settings-btn">settings</button>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
